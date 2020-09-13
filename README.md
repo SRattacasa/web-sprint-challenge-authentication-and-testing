@@ -26,11 +26,19 @@ Be prepared to demonstrate your understanding of this week's concepts by answeri
 
 1. Differences between using _sessions_ or _JSON Web Tokens_ for authentication.
 
+There are a lot of differences, but the main ones are that JWTs are stateless, which is REST compliant. Sessions are stateful and require some kind of storage, either in memory or in some kind of database/storage repo. Sessions can be invalidated, JWTs are harder to invalidate (change the secret) and are sent with each request by the client.
+
 2. What does `bcrypt` do to help us store passwords in a secure manner.
+
+bcrypt hashes the password and can do so multiple times to increase the strength and avoid storing in plain text.
 
 3. How are unit tests different from integration and end-to-end testing.
 
+Unit tests individual pieces/componenets, whereas integration and end-to-end testing runs tests against multiple units or pieces working together, and are more wholistic. 
+
 4. How _Test Driven Development_ changes the way we write applications and tests.
+
+It flips it in reverse-- you write a failing test before you have any code that could successfully pass the test, and then you write the code that can.
 
 You are expected to be able to answer questions in these areas. Your responses contribute to your Sprint Challenge grade.
 
