@@ -1,8 +1,3 @@
-/* 
-  complete the middleware code to check if the user is logged in
-  before granting access to the next middleware/route handler
-*/
-
 // copied from restrict.js
 const jwt = require("jsonwebtoken")
 
@@ -15,7 +10,8 @@ function restrict() {
 
 		try {
 			// token is coming from the client's cookie jar, in the "Cookie" header
-			const token = req.cookies.token
+      const token = req.cookies.token
+      console.log(token)
 			if (!token) {
 				return res.status(401).json(authError)
 			}

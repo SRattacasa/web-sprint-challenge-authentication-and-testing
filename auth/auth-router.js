@@ -50,13 +50,13 @@ router.post('/login', async (req, res, next) =>
 
   const token = jwt.sign({
     userID: user.id,
-    userRole: "basic",
   }, process.env.JWT_SECRET)
 
   res.cookie("token", token)
 
   res.json({
-    message: "Welcome to the Challenge."
+    message: "Welcome to the Challenge.",
+    token: token
   })
 });
 
